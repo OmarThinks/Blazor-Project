@@ -1,0 +1,61 @@
+@page "/message"
+
+<h1>Message:</h1>
+
+<form>
+
+	<div class="form-group">
+	<label>Full Name:</label>	
+	<input 
+		 type="text" 
+		name="Full Name" @bind="inputFullName"
+		@oninput="((ui) => { 
+		inputFullName = (string) ui.Value;
+		updateMessage();
+	})"
+		>
+	</div>
+</form>
+
+
+<div>
+	<h2>You Message</h2>
+	<p>@message</p>
+</div>
+
+
+
+
+
+
+
+
+
+@code {
+	private string inputFullName;
+	private string message;
+
+	private void updateMessage()
+	{
+		if(inputFullName=="")
+		{message="";}
+		else{
+			message="Hello, " + inputFullName + "!" ;
+		}
+	}
+
+
+	 
+}
+
+
+
+
+
+
+
+
+
+
+
+
