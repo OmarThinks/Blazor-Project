@@ -14,18 +14,20 @@
 
 
 
+<ul class="p-0 pt-3 pb-1" style="list-style:none;">
 
+    @for (int i = 0; i < todos.Count(); i++)
+    {
+        string todo = todos[i];
+        int listIndex = i + 1;
 
-@for (int i = 0; i < todos.Count(); i++)
-{
-    string todo = todos[i];
-    int listIndex = i + 1;
-
-  <li class="page-item"><a class="page-link">
-  	@listIndex) @todo
-  </a></li>
-}
-
+        <li class="page-item">
+            <a>
+                @listIndex) @todo
+            </a>
+        </li>
+    }
+</ul>
 
 
 
