@@ -14,17 +14,25 @@
 
 
 
-<ul class="p-0 pt-3 pb-1" style="list-style:none;">
+<ul class="p-0 mt-2" style="list-style:none; align-items:center;">
 
     @for (int i = 0; i < todos.Count(); i++)
     {
         string todo = todos[i];
         int listIndex = i + 1;
 
-        <li class="page-item">
-            <a>
+
+        <li class="mt-2 ml-0" style="border:solid 1px black; margin:.1em; padding:.1em;
+    display:flex; flex-direction:row; width:100%; justify-content:space-between;
+    
+">
+            <p class="ml-1"
+               style="display:inline; margin-top:auto; margin-bottom:auto;">
                 @listIndex) @todo
-            </a>
+            </p>
+
+            <button class="btn btn-danger m-1" style="float:right;">Delete</button>
+
         </li>
     }
 </ul>
@@ -34,7 +42,8 @@
 
 @code {
     private string newTodoItem;
-    private List<string> todos = new List<string>() {};
+    private List<string> todos = new List<string>() {
+        "Wake Up", "Wash Your Face","Brush your teeth"};
     void addTodo()
     {
         if(newTodoItem != "") { todos.Add(newTodoItem); }
