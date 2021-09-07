@@ -5,7 +5,7 @@
 <form @onsubmit="((ui)=> { addTodo(); } )"
       >
 	<div class="input-group">
-		<label>New Todo Item</label>
+		<label>New Todo Item: </label>
 		<input type="text" name="newTodoItem" @bind="newTodoItem">
 	</div>
 
@@ -32,13 +32,11 @@
 
 @code {
     private string newTodoItem;
-    private List<string> todos = new List<string>() { "Hey"};
+    private List<string> todos = new List<string>() {};
     void addTodo()
     {
-        todos.Add(newTodoItem);
+        if(newTodoItem != "") { todos.Add(newTodoItem); }
+        newTodoItem = "";
     }
-
-
-
 }
 
