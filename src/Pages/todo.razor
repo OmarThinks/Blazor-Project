@@ -15,12 +15,14 @@
 
 
 
-@foreach (string todo in todos)
+@for (int i =0; i<todos.Count();i++)
     {
        //var localVariable = i;
-
+       string todo = todos[i];
+       int listIndex = i+1;
+      
       <li class="page-item"><a class="page-link">
-      	@todo
+      	@listIndex) @todo
       </a></li>
     }
 
