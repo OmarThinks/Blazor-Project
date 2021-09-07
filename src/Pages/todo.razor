@@ -1,0 +1,39 @@
+@page "/todo"
+
+<h1>Todo</h1>
+
+<form>
+	<div class="input-group">
+		<label>New Todo Item</label>
+		<input type="text" name="newTodoItem" @bind="newTodoItem">
+	</div>
+
+	<input type="submit" value="Submit">
+</form>
+
+
+
+
+
+@foreach (string todo in todos)
+    {
+       //var localVariable = i;
+
+      <li class="page-item"><a class="page-link">
+      	@todo
+      </a></li>
+    }
+
+
+
+
+
+@code {
+	private string newTodoItem;
+	private List<string> todos=
+		new List<string>
+			(
+				new string[] { "element1", "element2", "element3" }
+			);
+
+}
