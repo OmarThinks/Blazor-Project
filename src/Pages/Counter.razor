@@ -4,13 +4,40 @@
 
 <p>Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<p>Counter/10: @dividedOver10 </p>
+
+
+
+<button class="btn btn-primary" @onclick="IncrementCount">Increase</button>
+<button class="btn btn-primary" @onclick="DecreaseNumber">Decrease</button>
 
 @code {
     private int currentCount = 0;
+    private int dividedOver10 = 0;
+
+
+    private void calculateDividedOver10()
+    {
+    	dividedOver10 = currentCount/10;
+    }
 
     private void IncrementCount()
     {
         currentCount++;
+        calculateDividedOver10();
     }
+
+    private void DecreaseNumber()
+    {
+        currentCount--;
+        calculateDividedOver10();
+
+    }
+
+
+}
+
+@code{
+
 }
