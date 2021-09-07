@@ -15,27 +15,29 @@
 
 
 
-@for (int i =0; i<todos.Count();i++)
-    {
-       //var localVariable = i;
-       string todo = todos[i];
-       int listIndex = i+1;
-      
-      <li class="page-item"><a class="page-link">
-      	@listIndex) @todo
-      </a></li>
-    }
+@for (int i = 0; i < todos.Count(); i++)
+{
+    string todo = todos[i];
+    int listIndex = i + 1;
+
+  <li class="page-item"><a class="page-link">
+  	@listIndex) @todo
+  </a></li>
+}
 
 
 
 
 
 @code {
-	private string newTodoItem;
-	private List<string> todos=
-		new List<string>
-			(
-				new string[] { "element1", "element2", "element3" }
-			);
+    private string newTodoItem;
+    private List<string> todos = new List<string>() { "Hey"};
+    void addTodo(string newTodo)
+    {
+        todos.Add(newTodo);
+    }
+
+
 
 }
+
