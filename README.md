@@ -43,3 +43,18 @@ You type your full name, and the application will welcome you.
 
 
 
+
+
+
+
+## B-3) Todo List:
+
+<img src="images/todo.gif">
+
+
+
+
+You can add new todo items, and delete already existing
+todo items.
+
+
