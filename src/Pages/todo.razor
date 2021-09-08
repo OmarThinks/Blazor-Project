@@ -1,15 +1,16 @@
 @page "/todo"
+@using System.Text.Json
+
 
 <h1>Todo</h1>
 
-<form @onsubmit="((ui)=> { addTodo(); } )"
-      >
-	<div class="input-group">
-		<label>New Todo Item: </label>
-		<input type="text" name="newTodoItem" @bind="newTodoItem">
-	</div>
+<form @onsubmit="((ui)=> { addTodo(); } )">
+    <div class="input-group">
+        <label>New Todo Item: </label>
+        <input type="text" name="newTodoItem" @bind="newTodoItem">
+    </div>
 
-	<input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 </form>
 
 
@@ -24,14 +25,19 @@
 
         <li class="mt-2 ml-0" style="border:solid 1px black; margin:.1em; padding:.1em;
     display:flex; flex-direction:row; width:100%; justify-content:space-between;
-    
+
 ">
             <p class="ml-1"
                style="display:inline; margin-top:auto; margin-bottom:auto;">
                 @listIndex) @todo
             </p>
 
-            <button class="btn btn-danger m-1" style="float:right;">Delete</button>
+            <button class="btn btn-danger m-1" style="float:right;" @key="i"
+                    @onclick="((ui)=> {
+                                  deleteTodo(listIndex-1);
+                              } )">
+                Delete
+            </button>
 
         </li>
     }
@@ -46,8 +52,17 @@
         "Wake Up", "Wash Your Face","Brush your teeth"};
     void addTodo()
     {
-        if(newTodoItem != "") { todos.Add(newTodoItem); }
+        if (newTodoItem != "") { todos.Add(newTodoItem); }
         newTodoItem = "";
     }
+
+
+
+    void deleteTodo(int todoIndex)
+    {
+        Console.WriteLine(todoIndex);
+        todos.RemoveAt(todoIndex);
+    }
+
 }
 
