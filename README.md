@@ -29,6 +29,15 @@ The counter/10 field descripes teh division of the counter over 10.
 
 
 
+## B-2) Message:
+
+
+
+<img src="images/message.gif">
+
+
+You type your full name, and the application will welcome you.
+
 
 
 
